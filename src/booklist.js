@@ -11,7 +11,7 @@ class BookList extends Component {
           <ol className="books-grid">
             {books.map((book) => (
                   <li key={book.id}>
-                    <Book title={book.title} authors={book.authors} shelf={book.shelf} cover={book.imageLinks.thumbnail}/>
+                    <Book title={book.title} authors={book.authors} shelf={book.shelf} cover={book.imageLinks}/>
                   </li>
                 ))
             }
