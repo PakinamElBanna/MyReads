@@ -4,7 +4,6 @@ import Book from "./book.js";
 class BookList extends Component {
   render() {
     const { title, books, changeShelf } = this.props;
-    console.log(books)
     return (
       <div className="bookshelf">
         <h2 className="bookshelf-title">{title}</h2>

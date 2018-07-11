@@ -13,8 +13,8 @@ class Rating extends Component {
   };
 
   ratingChanged = newRating => {
-    const averageRating = this.getAverageRating(newRating);
-    this.props.rateBook(averageRating);
+    // const averageRating = this.getAverageRating(newRating);
+    // this.props.rateBook(averageRating);
   };
 
   render() {
