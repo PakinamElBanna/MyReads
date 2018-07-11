@@ -13,7 +13,6 @@ class Rating extends Component {
   };
 
   ratingChanged = newRating => {
-    // TODO: Investigate the possibility of updating the actual book rating.
     const averageRating = this.getAverageRating(newRating);
     this.props.rateBook(averageRating);
   };
