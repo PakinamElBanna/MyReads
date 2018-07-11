@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as BooksAPI from "./BooksAPI";
+import Rating from './rating';
 
 class Book extends Component {
   state = {
@@ -17,6 +18,13 @@ class Book extends Component {
       this.props.getAllBooks();
     });
   };
+
+  rateBook = (averageRating) => {
+    // TODO: API needs to be investigated to see if updating the average rating is allowed.
+    // const rating = { averageRating: averageRating, shelf: this.props.book.shelf };
+    // BooksAPI.rate(this.props.book, rating)
+    //         .then(books => this.props.getAllBooks())
+  }
 
   componentDidMount = () => {
     this.setState(oldState => ({
@@ -85,6 +93,7 @@ class Book extends Component {
               )}
             </div>
           )}
+          <Rating ratingsCount={book.ratingsCount} averageRating={book.averageRating} rateBook={this.rateBook} />
       </div>
     );
   }
