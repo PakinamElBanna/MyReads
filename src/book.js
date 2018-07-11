@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as BooksAPI from "./BooksAPI";
+import Rating from './rating';
 
 class Book extends Component {
   state = {
@@ -17,6 +18,11 @@ class Book extends Component {
       this.props.getAllBooks();
     });
   };
+
+  rateBook = (averageRating) => {
+    const rating = { averageRating: averageRating, shelf: this.props.book.shelf };
+    BooksAPI.rate(this.props.book, rating)
+  }
 
   componentDidMount = () => {
     this.setState(oldState => ({
@@ -85,6 +91,7 @@ class Book extends Component {
               )}
             </div>
           )}
+          <Rating ratingsCount={book.ratingsCount} averageRating={book.averageRating} rateBook={this.rateBook} />
       </div>
     );
   }
